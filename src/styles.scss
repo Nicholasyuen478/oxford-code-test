@@ -1,0 +1,54 @@
+:root {
+  --color-highlight: rgb(254, 42, 157);
+  --color-basic: rgb(33, 37, 41);
+  --highlight-percentage: 0%;
+}
+
+body {
+  background-color: rgba(229, 231, 235);
+}
+
+div {
+  padding: 0.5rem;
+}
+
+.reference {
+  background-color: white;
+  text-align: center;
+}
+
+.played {
+  background-image: -webkit-linear-gradient(
+    left,
+    var(--color-highlight) 100%,
+    var(--color-basic) 0%
+  );
+  display: inline;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.normal {
+  background-image: -webkit-linear-gradient(
+    left,
+    var(--color-highlight) 0%,
+    var(--color-basic) 0%
+  );
+  display: inline;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+.playing {
+  background-image: -webkit-linear-gradient(
+    left,
+    var(--color-highlight) var(--highlight-percentage),
+    var(--color-basic) 0%
+  );
+  display: inline;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
