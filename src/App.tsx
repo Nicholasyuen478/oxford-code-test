@@ -1,17 +1,16 @@
 import "./styles.scss";
 import sample from "./data/sample.json";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import BrightcovePlayer from "@brightcove/react-player-loader";
 import demoVideo from "./data/demo.mp4";
 
 export default function App() {
   const videoPlayer = useRef<any>(null);
-  const [highlightPercentage, setHighlightPercentage] = useState<number>(0);
   const [currentTime, setCurrentTime] = useState(0);
-  const [currentWordIndex, setCurrentWordIndex] = useState(1);
 
   const switchToPlayCurrentWord = (time: number) => {
     videoPlayer.current.currentTime(time);
+    videoPlayer.current.play();
   };
 
   const text = () => {
@@ -57,14 +56,6 @@ export default function App() {
       });
     }
   };
-
-  useEffect(() => {
-    // Highlighting the current playing word
-    document.documentElement.style.setProperty(
-      "--highlight-percentage",
-      `${highlightPercentage}%`
-    );
-  }, [highlightPercentage]);
 
   return (
     <div className="App">
